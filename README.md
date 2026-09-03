@@ -28,12 +28,14 @@ Production build: `npm run build && npm start`.
 
 ## Images & video
 
-Every section's photo/video slot is already wired up (`components/ui/MediaImage.tsx`,
-`components/ui/HeroVideo.tsx`) and falls back to the site's CSS-only atmospheric treatment
-(gradients, diya glow, grain) when the file isn't there — no broken-image icons, nothing to
-break. **See [`MEDIA.md`](./MEDIA.md) for the exact file paths, dimensions, and notes for
-every slot** (including the hero background video) — drop a file at the documented path
-under `public/images/` or `public/videos/` and it appears automatically, no code changes.
+Every section's photo/video slot is wired up (`components/ui/MediaImage.tsx`,
+`components/ui/HeroVideo.tsx`) and currently holds a **placeholder** — small, original,
+procedurally-generated art (gradients + silhouette + drifting diya points), not real
+photography. **See [`MEDIA.md`](./MEDIA.md) for the exact file path, dimensions, and notes
+for every slot** — overwrite any file at its documented path under `public/images/` or
+`public/videos/` with real photography/video and it swaps in automatically, no code changes.
+If a file is ever removed instead, that slot falls back gracefully to the underlying CSS
+atmosphere rather than showing a broken-image icon.
 
 ## Design tokens
 

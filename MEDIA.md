@@ -1,13 +1,20 @@
 # Media manifest
 
-Every image/video below is wired up in the code already, via `components/ui/MediaImage.tsx`
-and `components/ui/HeroVideo.tsx`. Right now none of these files exist, so each slot quietly
-falls back to the site's CSS atmosphere (gradients, diya glow, grain) — nothing is broken,
-no broken-image icons. **Drop a real file at the exact path below and it appears automatically
-on the next page load. No code changes needed.**
+Every path below is wired up via `components/ui/MediaImage.tsx` and `components/ui/HeroVideo.tsx`,
+and every path below **currently holds a placeholder file** — not photography, not stock, but
+small procedurally-generated pieces (gradients + a silhouette motif + drifting "diya" points,
+rendered from `art-gen.html` via a headless-browser screenshot/recording, entirely offline). They
+exist so the site shows *something* right now instead of nothing. **Replace any file with a real
+one at the same path and it swaps in automatically on the next page load — no code changes
+needed.** If a file is ever deleted, that slot falls back to the underlying CSS atmosphere
+gracefully rather than showing a broken-image icon.
 
-Put everything under `public/images/` and `public/videos/` (create those folders if they
-don't exist — they're plain static files Next.js serves as-is, unoptimized).
+Everything lives under `public/images/` and `public/videos/`.
+
+One gap: `public/videos/hero-loop.mp4` does **not** exist — this sandbox's ffmpeg build has no
+H.264 encoder, so only the `.webm` (VP8) could be generated. `HeroVideo` tries `.webm` first, so
+most browsers (Chrome, Firefox, Edge) already play it; Safari/iOS will fall back to the poster
+image until a real `.mp4` is added at that path.
 
 ## Hero video
 
@@ -50,6 +57,6 @@ Eight small images for the "What You Will Move Through" grid — portrait or squ
 
 ## Licensing note
 
-Use photography/video you own the rights to (Wandermate's own shoot, or a
-properly licensed stock source) — filenames above are just the wiring, not
-a claim about where the content should come from.
+The current files are original generative graphics with no licensing concerns at all — but
+they are placeholders, not the finished site. Replace them with photography/video you own the
+rights to (Wandermate's own shoot, or a properly licensed stock source).
