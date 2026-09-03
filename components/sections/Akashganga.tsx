@@ -1,4 +1,5 @@
 import RevealOnScroll from "../ui/RevealOnScroll";
+import MediaImage from "../ui/MediaImage";
 import { akashganga } from "@/lib/content";
 
 export default function Akashganga() {
@@ -14,6 +15,13 @@ export default function Akashganga() {
             Entry is by QR code, not by queue. What follows is curated for a small number of guests —
             an afternoon built around Ramnagar Fort's history, craft, and classical performance.
           </p>
+          <div className="relative mt-4 aspect-[4/3] w-full max-w-md overflow-hidden rounded-sm border border-ivory/10">
+            <MediaImage
+              src="/images/akashganga-fort.jpg"
+              alt="Ramnagar Fort during the Akashganga Festival"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
         </RevealOnScroll>
 
         <RevealOnScroll delay={150}>

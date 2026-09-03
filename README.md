@@ -26,13 +26,14 @@ Production build: `npm run build && npm start`.
 1. **`policySections` content** — the brief named the policy categories (cancellation, force majeure, etc.) but not their binding legal/financial text. Each entry currently reads *"Full terms to be confirmed by Wandermate before publishing"* — replace with real, legally-reviewed copy before launch.
 2. **Testimonial attribution** — guest quotes were supplied without names/cities, so they're shown as "Verified traveler." Update `testimonials` in `lib/content.ts` if that detail becomes available.
 
-## Images
+## Images & video
 
-No photography assets were supplied, so every section uses a CSS-only atmospheric treatment (gradients, a scattered "diya" glow layer, a grain overlay) rather than stock photography, per the brief's instruction not to invent visuals. To bring in real photography:
-
-- Add files under `public/images/` (e.g. `hero-ganga-diyas.jpg`, `og-dev-deepawali.jpg` — the OG image path is already referenced in `app/layout.tsx`).
-- Swap the relevant CSS background layer in a section component for an `next/image` `<Image>` (or a `background-image` if it needs to sit behind the gradient overlays already in place).
-- Keep dark overlays only where needed for text contrast, per the brief's image direction.
+Every section's photo/video slot is already wired up (`components/ui/MediaImage.tsx`,
+`components/ui/HeroVideo.tsx`) and falls back to the site's CSS-only atmospheric treatment
+(gradients, diya glow, grain) when the file isn't there — no broken-image icons, nothing to
+break. **See [`MEDIA.md`](./MEDIA.md) for the exact file paths, dimensions, and notes for
+every slot** (including the hero background video) — drop a file at the documented path
+under `public/images/` or `public/videos/` and it appears automatically, no code changes.
 
 ## Design tokens
 

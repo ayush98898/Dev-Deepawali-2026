@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Button from "../ui/Button";
+import HeroVideo from "../ui/HeroVideo";
 import { eventDates } from "@/lib/content";
 
 // Deterministic scattered points standing in for distant diyas along the
@@ -38,6 +39,12 @@ export default function Hero() {
     <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden bg-charcoal">
       {/* Atmosphere layers */}
       <div ref={layerRef} className="absolute inset-0 will-change-transform">
+        <HeroVideo
+          webm="/videos/hero-loop.webm"
+          mp4="/videos/hero-loop.mp4"
+          poster="/images/hero-poster.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-[radial-gradient(120%_70%_at_50%_115%,rgba(201,105,31,0.22)_0%,rgba(201,105,31,0)_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_100%,rgba(231,200,115,0.14)_0%,rgba(231,200,115,0)_55%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0)_0%,rgba(11,10,8,0.4)_55%,rgba(11,10,8,0.96)_100%)]" />

@@ -177,17 +177,18 @@ export const itinerary: ItineraryDay[] = [
 export type Highlight = {
   title: string;
   detail: string;
+  image: string;
 };
 
 export const highlights: Highlight[] = [
-  { title: "Ganga Aarti", detail: "Premium riverside seating" },
-  { title: "Akashganga Festival", detail: "Exclusive QR-based entry" },
-  { title: "Ramnagar Fort", detail: "Museum + heritage + cultural experiences" },
-  { title: "Banarasi Culture", detail: "Weaving, zardozi, classical music and Kathak" },
-  { title: "Private Ganga Cruise", detail: "4-hour Dev Deepawali river experience" },
-  { title: "Fort Dinner", detail: "Banarasi buffet / luxury fine dining" },
-  { title: "Old Kashi", detail: "Food walk through Chowk and ancient lanes" },
-  { title: "BHU", detail: "Campus + New Vishwanath Temple" },
+  { title: "Ganga Aarti", detail: "Premium riverside seating", image: "/images/highlight-ganga-aarti.jpg" },
+  { title: "Akashganga Festival", detail: "Exclusive QR-based entry", image: "/images/highlight-akashganga.jpg" },
+  { title: "Ramnagar Fort", detail: "Museum + heritage + cultural experiences", image: "/images/highlight-ramnagar-fort.jpg" },
+  { title: "Banarasi Culture", detail: "Weaving, zardozi, classical music and Kathak", image: "/images/highlight-banarasi-culture.jpg" },
+  { title: "Private Ganga Cruise", detail: "4-hour Dev Deepawali river experience", image: "/images/highlight-ganga-cruise.jpg" },
+  { title: "Fort Dinner", detail: "Banarasi buffet / luxury fine dining", image: "/images/highlight-fort-dinner.jpg" },
+  { title: "Old Kashi", detail: "Food walk through Chowk and ancient lanes", image: "/images/highlight-old-kashi.jpg" },
+  { title: "BHU", detail: "Campus + New Vishwanath Temple", image: "/images/highlight-bhu.jpg" },
 ];
 
 export const akashganga = {

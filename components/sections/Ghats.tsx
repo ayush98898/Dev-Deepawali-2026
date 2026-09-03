@@ -1,5 +1,6 @@
 import SectionHeading from "../ui/SectionHeading";
 import RevealOnScroll from "../ui/RevealOnScroll";
+import MediaImage from "../ui/MediaImage";
 import { ghats } from "@/lib/content";
 
 export default function Ghats() {
@@ -34,6 +35,14 @@ export default function Ghats() {
               />
             ))}
           </div>
+
+          {/* Real panorama, once available at this path, layers over the CSS skyline above */}
+          <MediaImage
+            src="/images/ghats-panorama.jpg"
+            alt="Panoramic view of Varanasi's illuminated ghats from the Ganga"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0.15)_0%,rgba(11,10,8,0.55)_100%)]" />
         </RevealOnScroll>
 
         <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">

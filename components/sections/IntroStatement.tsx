@@ -1,4 +1,5 @@
 import RevealOnScroll from "../ui/RevealOnScroll";
+import MediaImage from "../ui/MediaImage";
 
 const threads = [
   "Old Kashi",
@@ -18,8 +19,15 @@ const threads = [
 
 export default function IntroStatement() {
   return (
-    <section id="experience" className="relative bg-charcoal py-section">
-      <div className="section-shell">
+    <section id="experience" className="relative overflow-hidden bg-charcoal py-section">
+      <MediaImage
+        src="/images/intro-old-kashi.jpg"
+        alt="A lane in Old Kashi"
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
+      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0.5)_0%,rgba(11,10,8,0.92)_70%)]" />
+
+      <div className="section-shell relative">
         <RevealOnScroll>
           <p className="font-display text-display-md italic text-balance text-ivory">
             Some cities are visited.

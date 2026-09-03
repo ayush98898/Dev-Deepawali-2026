@@ -1,14 +1,20 @@
 import SectionHeading from "../ui/SectionHeading";
 import RevealOnScroll from "../ui/RevealOnScroll";
+import MediaImage from "../ui/MediaImage";
 import { nightBecomesLight } from "@/lib/content";
 
 export default function NightBecomesLight() {
   return (
     <section id="journey" className="relative overflow-hidden bg-charcoal py-section">
+      <MediaImage
+        src="/images/night-becomes-light-bg.jpg"
+        alt="Thousands of diyas illuminating the Varanasi ghats at night"
+        className="absolute inset-0 h-full w-full object-cover opacity-30"
+      />
       {/* Luminosity increases toward the base of the section, echoing dusk to full illumination */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0)_0%,rgba(201,105,31,0.05)_45%,rgba(231,200,115,0.16)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(11,10,8,0.5)_0%,rgba(201,105,31,0.1)_45%,rgba(231,200,115,0.22)_100%)]"
       />
 
       <div className="section-shell relative">
