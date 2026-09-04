@@ -15,7 +15,7 @@ Everything lives under `public/images/` and `public/videos/`.
 
 | Path | Used for | Notes |
 |---|---|---|
-| `public/videos/hero-loop.mp4` | Hero background | Real footage, from Wandermate's "Teaser — Akashganga 2026" clip: fireworks over the illuminated ghats. Re-encoded from the original 4K/60fps/64s source down to 1280×720/30fps/muted/H.264 (~5.5MB) for web weight. |
+| `public/videos/hero-loop.mp4` | Hero background | Real footage, from Wandermate's "Teaser — Akashganga 2026" clip: fireworks over the illuminated ghats. Re-encoded from the original 4K/60fps/64s source to 1920×1080/30fps/muted/H.264, 2-pass at ~2Mbps (~16MB) — full 1080p so it isn't upscaled on desktop, with a bitrate cap so the fireworks scenes (the hardest content to compress) don't balloon the file. An earlier 720p/low-bitrate pass looked visibly soft/blocky; this is the quality floor. |
 | `public/images/hero-poster.jpg` | Video poster + still fallback for `prefers-reduced-motion` and slow connections | A frame pulled from the same source clip at the peak of the firework burst, 1920×1080. |
 
 No `.webm` — mp4/H.264 alone already covers every major browser including Safari (which doesn't
