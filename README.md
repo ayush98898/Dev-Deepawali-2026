@@ -21,10 +21,14 @@ Production build: `npm run build && npm start`.
 
 ## Content rule
 
-`lib/content.ts` only contains what was supplied in the brief. Two things are intentionally marked as pending rather than invented:
-
-1. **`policySections` content** — the brief named the policy categories (cancellation, force majeure, etc.) but not their binding legal/financial text. Each entry currently reads *"Full terms to be confirmed by Wandermate before publishing"* — replace with real, legally-reviewed copy before launch.
-2. **Testimonial attribution** — guest quotes were supplied without names/cities, so they're shown as "Verified traveler." Update `testimonials` in `lib/content.ts` if that detail becomes available.
+`lib/content.ts` only contains what was supplied in the brief or the source PDF
+(`Dev_Deepawali_2026.pdf`) — nothing invented. `policySections` is now the verbatim
+Booking Policies text from that PDF (pages 18–20): Booking & Payment, Pricing,
+Cancellation & Refund, Rescheduling, Force Majeure, Itinerary Changes, Guest Conduct &
+Safety, Identification, Liability. One thing is still intentionally marked as a gap:
+**testimonial attribution** — guest quotes were supplied without names/cities, so they're
+shown as "Verified traveler." Update `testimonials` in `lib/content.ts` if that detail
+becomes available.
 
 ## Images & video
 

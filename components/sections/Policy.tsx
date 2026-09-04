@@ -14,8 +14,8 @@ export default function Policy() {
         <SectionHeading eyebrow="Booking Policy" title="Terms, Plainly Stated" />
 
         <p className="mt-6 max-w-prose text-sm text-ivory-faint">
-          The categories below reflect the terms this trip is governed by. Wandermate will confirm the
-          full legal and financial wording for each before this page goes live.
+          The terms this trip is governed by, in full — including payment, cancellation, and what
+          happens if plans change.
         </p>
 
         <div className="mt-10 divide-y divide-ivory/10 border-y border-ivory/10">
@@ -39,10 +39,10 @@ export default function Policy() {
                 </button>
                 <div
                   className={`overflow-hidden transition-[max-height] duration-500 ease-cinematic ${
-                    isOpen ? "max-h-40" : "max-h-0"
+                    isOpen ? "max-h-[32rem]" : "max-h-0"
                   }`}
                 >
-                  <p className="pb-5 text-sm italic text-ivory-dim">{section.content}</p>
+                  <p className="max-w-prose pb-6 text-sm leading-relaxed text-ivory-dim">{section.content}</p>
                 </div>
               </RevealOnScroll>
             );
