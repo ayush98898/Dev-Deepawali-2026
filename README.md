@@ -33,13 +33,14 @@ becomes available.
 ## Images & video
 
 Every section's photo/video slot is wired up (`components/ui/MediaImage.tsx`,
-`components/ui/HeroVideo.tsx`) and currently holds a **placeholder** — small, original,
-procedurally-generated art (gradients + silhouette + drifting diya points), not real
-photography. **See [`MEDIA.md`](./MEDIA.md) for the exact file path, dimensions, and notes
-for every slot** — overwrite any file at its documented path under `public/images/` or
-`public/videos/` with real photography/video and it swaps in automatically, no code changes.
-If a file is ever removed instead, that slot falls back gracefully to the underlying CSS
-atmosphere rather than showing a broken-image icon.
+`components/ui/HeroVideo.tsx`). The **hero background video and poster are real** — cut down
+from Wandermate's own "Teaser — Akashganga 2026" footage. Every other slot still holds a
+**placeholder**: small, original, procedurally-generated art (gradients + silhouette + drifting
+diya points), not real photography. **See [`MEDIA.md`](./MEDIA.md) for the exact file path,
+dimensions, and notes for every slot** — overwrite any file at its documented path under
+`public/images/` or `public/videos/` with real photography/video and it swaps in automatically,
+no code changes. If a file is ever removed instead, that slot falls back gracefully to the
+underlying CSS atmosphere rather than showing a broken-image icon.
 
 ## Design tokens
 

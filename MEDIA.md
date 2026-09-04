@@ -1,32 +1,30 @@
 # Media manifest
 
-Every path below is wired up via `components/ui/MediaImage.tsx` and `components/ui/HeroVideo.tsx`,
-and every path below **currently holds a placeholder file** — not photography, not stock, but
-small procedurally-generated pieces (gradients + a silhouette motif + drifting "diya" points,
-rendered from `art-gen.html` via a headless-browser screenshot/recording, entirely offline). They
-exist so the site shows *something* right now instead of nothing. **Replace any file with a real
-one at the same path and it swaps in automatically on the next page load — no code changes
-needed.** If a file is ever deleted, that slot falls back to the underlying CSS atmosphere
-gracefully rather than showing a broken-image icon.
+Every path below is wired up via `components/ui/MediaImage.tsx` and `components/ui/HeroVideo.tsx`.
+The **hero video and poster are now real** (see below); every other path still holds a
+placeholder — small procedurally-generated pieces (gradients + a silhouette motif + drifting
+"diya" points, rendered from `art-gen.html` via a headless-browser screenshot, entirely offline),
+not photography or stock. **Replace any file with a real one at the same path and it swaps in
+automatically on the next page load — no code changes needed.** If a file is ever deleted, that
+slot falls back to the underlying CSS atmosphere gracefully rather than showing a broken-image
+icon.
 
 Everything lives under `public/images/` and `public/videos/`.
 
-One gap: `public/videos/hero-loop.mp4` does **not** exist — this sandbox's ffmpeg build has no
-H.264 encoder, so only the `.webm` (VP8) could be generated. `HeroVideo` tries `.webm` first, so
-most browsers (Chrome, Firefox, Edge) already play it; Safari/iOS will fall back to the poster
-image until a real `.mp4` is added at that path.
-
-## Hero video
+## Hero video — real
 
 | Path | Used for | Notes |
 |---|---|---|
-| `public/videos/hero-loop.mp4` | Hero background, primary source | H.264, 1920×1080 or 1280×720, **muted**, 8–20s loop, no hard cuts (it needs to loop invisibly), ideally under ~8MB so it doesn't fight the LCP image. Slow motion or long lens footage of the ghats / diyas / Ganga reads best — avoid handheld shake. |
-| `public/videos/hero-loop.webm` | Hero background, preferred source (checked first) | Same content as the mp4, VP9/AV1 for a smaller file. Optional — mp4 alone is enough. |
-| `public/images/hero-poster.jpg` | Video poster + still fallback for `prefers-reduced-motion` and slow connections | Same aspect/framing as the video's first frame, 1920×1080. |
+| `public/videos/hero-loop.mp4` | Hero background | Real footage, from Wandermate's "Teaser — Akashganga 2026" clip: fireworks over the illuminated ghats. Re-encoded from the original 4K/60fps/64s source down to 1280×720/30fps/muted/H.264 (~5.5MB) for web weight. |
+| `public/images/hero-poster.jpg` | Video poster + still fallback for `prefers-reduced-motion` and slow connections | A frame pulled from the same source clip at the peak of the firework burst, 1920×1080. |
 
-The video is skipped entirely (poster shown instead) when the visitor has reduced-motion
-enabled, and it never autoplays with sound (it's always muted, per browser autoplay rules
-and the brief's "no cheesy effects" direction).
+No `.webm` — mp4/H.264 alone already covers every major browser including Safari (which doesn't
+support webm/VP9 well), so a second encode wasn't worth the extra file. The video is skipped
+entirely (poster shown instead) when the visitor has reduced-motion enabled, and it never
+autoplays with sound (always muted, per browser autoplay rules and the brief's "no cheesy
+effects" direction). Loops back to the start after the full 64s clip plays through — this is a
+narrative teaser rather than a short seamless loop, so the loop point isn't invisible, but that
+reads as intentional for a hero this cinematic.
 
 ## Section images
 

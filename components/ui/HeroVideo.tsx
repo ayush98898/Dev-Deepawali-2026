@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
-  webm: string;
   mp4: string;
+  webm?: string;
   poster: string;
   className?: string;
 };
@@ -13,6 +13,8 @@ type Props = {
  * Background video for the hero. Falls back to nothing (revealing the CSS
  * atmosphere behind it) if the files aren't present yet, and is skipped
  * entirely for prefers-reduced-motion — the poster/gradient stand in instead.
+ * mp4/H.264 alone covers every major browser (including Safari, which webm
+ * doesn't) — webm is optional, for a smaller file if one is ever added.
  */
 export default function HeroVideo({ webm, mp4, poster, className = "" }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -43,7 +45,7 @@ export default function HeroVideo({ webm, mp4, poster, className = "" }: Props) 
       poster={poster}
       onError={() => setFailed(true)}
     >
-      <source src={webm} type="video/webm" />
+      {webm && <source src={webm} type="video/webm" />}
       <source src={mp4} type="video/mp4" />
     </video>
   );

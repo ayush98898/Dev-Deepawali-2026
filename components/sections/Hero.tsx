@@ -40,7 +40,6 @@ export default function Hero() {
       {/* Atmosphere layers */}
       <div ref={layerRef} className="absolute inset-0 will-change-transform">
         <HeroVideo
-          webm="/videos/hero-loop.webm"
           mp4="/videos/hero-loop.mp4"
           poster="/images/hero-poster.jpg"
           className="absolute inset-0 h-full w-full object-cover"
