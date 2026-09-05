@@ -57,7 +57,7 @@ export default function Navigation() {
           </ul>
 
           <div className="hidden lg:block">
-            <Button href="#packages" variant="secondary" className="px-6 py-3 text-[11px]">
+            <Button href="#packages" variant="secondary" className="px-6 py-3 text-[11px]" trackEvent="nav_book_click">
               Book Now
             </Button>
           </div>
@@ -94,7 +94,7 @@ export default function Navigation() {
             </li>
           ))}
           <li>
-            <Button href="#packages" variant="primary" className="mt-2 w-full">
+            <Button href="#packages" variant="primary" className="mt-2 w-full" trackEvent="nav_book_click_mobile">
               Book Now
             </Button>
           </li>

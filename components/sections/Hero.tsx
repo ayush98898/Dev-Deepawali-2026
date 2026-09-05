@@ -83,10 +83,10 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:items-center">
-          <Button href="#packages" variant="primary">
+          <Button href="#packages" variant="primary" trackEvent="hero_book_click">
             Book Your Experience
           </Button>
-          <Button href="#journey" variant="secondary">
+          <Button href="#journey" variant="secondary" trackEvent="hero_explore_click">
             Explore the Journey ↓
           </Button>
         </div>

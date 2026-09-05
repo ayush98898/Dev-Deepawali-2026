@@ -22,15 +22,15 @@ export default function Highlights() {
               <div className="group relative flex h-full flex-col justify-between gap-8 overflow-hidden bg-charcoal p-8 transition-colors duration-500 hover:bg-charcoal-panel sm:p-10">
                 <MediaImage
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} — ${item.detail}`}
                   className="absolute inset-0 h-full w-full object-cover opacity-40 transition-opacity duration-700 group-hover:opacity-60"
                 />
                 <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/10" />
                 <span className="relative text-xs text-gold-dim">{String(i + 1).padStart(2, "0")}</span>
                 <div className="relative">
-                  <p className="font-display text-2xl text-ivory transition-colors group-hover:text-gold-bright">
+                  <h3 className="font-display text-2xl text-ivory transition-colors group-hover:text-gold-bright">
                     {item.title}
-                  </p>
+                  </h3>
                   <p className="mt-2 text-sm text-ivory-dim">{item.detail}</p>
                 </div>
               </div>

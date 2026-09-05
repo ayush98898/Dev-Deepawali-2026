@@ -19,10 +19,12 @@ export default function Testimonials() {
         <SectionHeading eyebrow="From Guests" title="What Kashi Left With Them" align="center" />
 
         <RevealOnScroll delay={150} className="mx-auto mt-16 max-w-3xl text-center">
-          <p key={index} className="animate-risefade font-display text-2xl italic text-balance text-ivory sm:text-3xl">
-            &ldquo;{t.quote}&rdquo;
-          </p>
-          <p className="mt-6 text-xs uppercase tracking-widest2 text-gold-dim">{t.attribution}</p>
+          <blockquote key={index} className="animate-risefade m-0">
+            <p className="font-display text-2xl italic text-balance text-ivory sm:text-3xl">&ldquo;{t.quote}&rdquo;</p>
+            <cite className="mt-6 block text-xs not-italic uppercase tracking-widest2 text-gold-dim">
+              {t.attribution}
+            </cite>
+          </blockquote>
 
           <div className="mt-10 flex items-center justify-center gap-6">
             <button

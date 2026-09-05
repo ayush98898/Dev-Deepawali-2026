@@ -25,7 +25,7 @@ export default function Packages() {
               >
                 <div>
                   <div className="flex items-baseline justify-between gap-4">
-                    <p className="font-display text-3xl text-ivory">{pkg.name}</p>
+                    <h3 className="font-display text-3xl text-ivory">{pkg.name}</h3>
                     {pkg.featured && (
                       <span className="text-[10px] uppercase tracking-widest2 text-gold-bright">Recommended</span>
                     )}
@@ -47,7 +47,12 @@ export default function Packages() {
                   </ul>
                 </div>
 
-                <Button href="#booking" variant={pkg.featured ? "primary" : "secondary"} className="w-full">
+                <Button
+                  href="#booking"
+                  variant={pkg.featured ? "primary" : "secondary"}
+                  className="w-full"
+                  trackEvent={`package_select_${pkg.id}`}
+                >
                   {pkg.cta}
                 </Button>
               </div>

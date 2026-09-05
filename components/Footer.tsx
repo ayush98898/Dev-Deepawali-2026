@@ -1,9 +1,9 @@
-import { contact } from "@/lib/content";
+import { contact, socialLinks } from "@/lib/content";
 
 const socials = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "TripAdvisor", href: "https://tripadvisor.com" },
-  { label: "Google Reviews", href: "https://google.com" },
+  ...(socialLinks.instagram ? [{ label: "Instagram", href: socialLinks.instagram }] : []),
+  { label: "TripAdvisor", href: socialLinks.tripAdvisor },
+  { label: "Google Reviews", href: socialLinks.googleReviews },
 ];
 
 export default function Footer() {
@@ -30,6 +30,11 @@ export default function Footer() {
             <a href={`https://${contact.website}`} className="hover:text-gold-bright">
               {contact.website}
             </a>
+            <address className="mt-2 not-italic text-ivory-faint">
+              {contact.address.line1}, {contact.address.line2}
+              <br />
+              {contact.address.city}, {contact.address.state} {contact.address.postalCode}
+            </address>
           </div>
 
           <div className="flex flex-col gap-2 text-sm uppercase tracking-widest2 text-ivory-dim md:items-end">
@@ -48,8 +53,12 @@ export default function Footer() {
           <br className="hidden sm:block" /> It is an experience that lives within you long after you leave.
         </p>
 
-        <p className="mt-10 text-center text-[11px] uppercase tracking-widest2 text-ivory-faint">
-          © {new Date().getFullYear()} Wandermate Varanasi. All rights reserved.
+        <p className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-[11px] uppercase tracking-widest2 text-ivory-faint">
+          <span>© {new Date().getFullYear()} Wandermate Varanasi. All rights reserved.</span>
+          <span aria-hidden>·</span>
+          <a href="/privacy" className="hover:text-gold-bright">
+            Privacy Policy
+          </a>
         </p>
       </div>
     </footer>

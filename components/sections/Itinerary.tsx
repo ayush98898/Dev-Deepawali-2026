@@ -37,7 +37,7 @@ export default function Itinerary() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_2fr] lg:gap-16">
           <RevealOnScroll key={`${day.day}-heading`}>
-            <p className="font-display text-display-sm text-ivory text-balance">{day.title}</p>
+            <h3 className="font-display text-display-sm text-ivory text-balance">{day.title}</h3>
             <p className="mt-4 max-w-xs text-sm text-ivory-dim">{day.summary}</p>
           </RevealOnScroll>
 

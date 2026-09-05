@@ -4,7 +4,9 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import GoogleTag from "@/components/GoogleTag";
 import { contact } from "@/lib/content";
+import { organizationJsonLd, eventJsonLd } from "@/lib/structuredData";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -33,11 +35,21 @@ export const metadata: Metadata = {
     "Dev Deepawali 2026",
     "Dev Deepawali Varanasi",
     "Dev Deepawali package",
+    "Dev Deepawali package price",
+    "Dev Deepawali tour booking",
     "Varanasi Dev Deepawali",
     "Dev Deepawali Ganga cruise",
+    "Akashganga festival Varanasi",
+    "Ganga Aarti package Varanasi",
     "Varanasi luxury experience",
     "Varanasi travel package",
+    "Varanasi tour package 2026",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title,
     description,
@@ -62,6 +74,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="relative overflow-x-hidden bg-charcoal">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd()) }}
+        />
+        <GoogleTag />
         <div aria-hidden className="pointer-events-none fixed inset-0 z-0 grain-overlay opacity-60" />
         <a
           href="#main"

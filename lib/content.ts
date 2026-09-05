@@ -10,6 +10,26 @@ export const contact = {
   phones: ["+91 92143 13559", "+91 84004 37772", "+91 80819 53302"],
   website: "wandermate.in",
   email: "info@wandermate.in",
+  // Verbatim from page 22 of the source PDF.
+  address: {
+    line1: "First Floor, Jawahar Nagar, B27/92-13, Durgakund Rd",
+    line2: "Jawahar Nagar Colony, Bhelupur",
+    city: "Varanasi",
+    state: "Uttar Pradesh",
+    postalCode: "221005",
+    country: "IN",
+  },
+};
+
+export const socialLinks = {
+  // These are the exact links given in the source PDF — both route through
+  // Wandermate's own domain rather than direct TripAdvisor/Google URLs.
+  tripAdvisor: "https://wandermate.in/trip-advisor",
+  googleReviews: "https://wandermate.in/google-reviews",
+  // No Instagram handle was given as text in the source PDF (likely an icon
+  // in the original design) — left unset rather than invented. Add the real
+  // handle here once available.
+  instagram: null as string | null,
 };
 
 export const eventDates = {
@@ -277,6 +297,9 @@ export const bookingSteps: BookingStep[] = [
 
 export type PolicySection = {
   title: string;
+  // Same content, phrased as a question — used for FAQPage structured data
+  // (title alone reads as a label, not a question Google can surface).
+  question: string;
   content: string;
 };
 
@@ -286,46 +309,55 @@ export type PolicySection = {
 export const policySections: PolicySection[] = [
   {
     title: "Booking & Payment",
+    question: "What are the booking and payment terms for Dev Deepawali 2026?",
     content:
       "A confirmed booking with WanderMate requires a 50% advance payment at the time of reservation. The remaining 50% balance must be paid no later than 15 days prior to the travel date, or as otherwise communicated by WanderMate at the time of booking. Bookings are confirmed only after the advance payment is realised, and remain subject to availability of Akashganga festival seats, cruise capacity, and hotel rooms. Given the highly limited nature of Akashganga seats and Dev Deepawali cruise capacity, early booking is strongly recommended. If the balance payment is not received by the due date, WanderMate reserves the right to cancel the booking, in which case the advance paid shall stand forfeited as per the cancellation policy below.",
   },
   {
     title: "Pricing",
+    question: "How much does the Dev Deepawali 2026 package cost?",
     content:
       "The package is priced at ₹39,999 per person for the Premium tier and ₹59,999 per person for the Luxury tier, fully inclusive of GST and all applicable government taxes. There are no hidden charges beyond what is explicitly listed under Exclusions. Prices are subject to change for new bookings made closer to the event date, depending on Akashganga and hotel availability.",
   },
   {
     title: "Cancellation & Refund",
+    question: "Can I cancel or get a refund on my Dev Deepawali booking?",
     content:
       "This is a strict no-refund booking, owing to the fixed, festival-dated nature of the package and the limited third-party allocations it depends on — Akashganga festival seats, cruise capacity, and hotel block bookings. Once the 50% advance is paid, no cancellation, refund, or partial refund of the advance will be processed under any circumstances, including but not limited to a change in travel plans, illness, visa issues, or personal emergencies. If the balance 50% has also been paid, the full amount remains non-refundable. WanderMate strongly recommends that guests purchase independent travel insurance to cover any unforeseen circumstances.",
   },
   {
     title: "Rescheduling",
+    question: "Can I reschedule my Dev Deepawali booking to a different date?",
     content:
       "Because Dev Deepawali is a fixed annual date tied to the lunar calendar, rescheduling to an alternate date is not possible within the same booking. Name changes or guest substitutions may be considered on a case-by-case basis, subject to approval, and must be requested at least 7 days prior to the event date.",
   },
   {
     title: "Force Majeure",
+    question: "What happens if Dev Deepawali is disrupted by events outside WanderMate's control?",
     content:
       "WanderMate is not liable for cancellations, delays, or itinerary changes caused by circumstances beyond its reasonable control, including but not limited to natural calamities, government restrictions, political disturbances, extreme weather, or partner and vendor cancellations. In such cases, WanderMate will make reasonable efforts to offer an alternative experience of comparable value, though no cash refund will be issued.",
   },
   {
     title: "Itinerary Changes",
+    question: "Can the Dev Deepawali itinerary change after I book?",
     content:
       "The itinerary, including timings, sequence of activities, and specific inclusions, may be modified by WanderMate or its partners — Akashganga and the partner hotels — due to operational, safety, weather, or crowd-related reasons. Any such change will be communicated to guests at the earliest opportunity, and WanderMate will ensure that the overall experience and value remain consistent with what was originally promised.",
   },
   {
     title: "Guest Conduct & Safety",
+    question: "What is expected of guests during the trip?",
     content:
       "Guests are expected to follow the timing and instructions provided by WanderMate guides and Akashganga staff, particularly around boarding times for the cruise and entry to the festival, both of which are time-critical and cannot be relaxed once missed. WanderMate is not responsible for guests missing scheduled activities due to late arrival at designated meeting points. Guests with medical conditions are advised to inform WanderMate at the time of booking so that appropriate arrangements can be made in advance.",
   },
   {
     title: "Identification",
+    question: "What identification do I need to bring?",
     content:
       "Valid government-issued photo identification is mandatory for hotel check-in and may be required for entry to the Akashganga festival and cruise. WanderMate is not responsible for denial of entry due to a guest's failure to carry valid identification.",
   },
   {
     title: "Liability",
+    question: "Who is responsible if something goes wrong with a third-party partner?",
     content:
       "WanderMate acts as a facilitator, coordinating accommodation, transport, guide services, and third-party experiences including the Akashganga festival and cruise. WanderMate is not liable for the independent acts, omissions, or service quality of third-party vendors, although all partners are vetted and selected for reliability. Travel is undertaken at the guest's own risk, and WanderMate recommends comprehensive travel insurance for all guests.",
   },

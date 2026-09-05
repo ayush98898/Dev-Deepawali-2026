@@ -1,5 +1,7 @@
 "use client";
 
+import { trackConversion } from "@/lib/analytics";
+
 type Props = {
   whatsappDigits: string;
 };
@@ -15,6 +17,7 @@ export default function WhatsAppFloat({ whatsappDigits }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Enquire on WhatsApp"
+      onClick={() => trackConversion("whatsapp_float_click")}
       className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full border border-gold-dim/60 bg-[#16281F]/95 px-5 py-3.5 text-xs font-semibold uppercase tracking-widest2 text-ivory shadow-[0_10px_30px_rgba(0,0,0,0.45)] backdrop-blur transition-all duration-300 hover:border-gold-bright hover:text-gold-bright sm:bottom-8 sm:right-8"
     >
       <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4 fill-current">

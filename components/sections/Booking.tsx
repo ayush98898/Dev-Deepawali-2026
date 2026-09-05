@@ -26,7 +26,13 @@ export default function Booking() {
         </div>
 
         <RevealOnScroll delay={200} className="mt-16 flex flex-col items-center gap-8 text-center">
-          <Button href={whatsappHref} variant="whatsapp" external className="px-10 py-5 text-sm">
+          <Button
+            href={whatsappHref}
+            variant="whatsapp"
+            external
+            className="px-10 py-5 text-sm"
+            trackEvent="whatsapp_click"
+          >
             Enquire on WhatsApp
           </Button>
 

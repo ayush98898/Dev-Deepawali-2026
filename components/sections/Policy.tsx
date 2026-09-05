@@ -4,12 +4,14 @@ import { useState } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import RevealOnScroll from "../ui/RevealOnScroll";
 import { policySections } from "@/lib/content";
+import { faqJsonLd } from "@/lib/structuredData";
 
 export default function Policy() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="faq" className="relative bg-charcoal py-section">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }} />
       <div className="section-shell">
         <SectionHeading eyebrow="Booking Policy" title="Terms, Plainly Stated" />
 

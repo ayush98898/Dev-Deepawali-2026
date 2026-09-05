@@ -19,7 +19,7 @@ export default function Cruise() {
       <div className="section-shell relative">
         <RevealOnScroll className="max-w-2xl">
           <span className="eyebrow">{cruise.eyebrow}</span>
-          <p className="mt-4 font-display text-display-lg text-balance text-ivory">{cruise.title}</p>
+          <h2 className="mt-4 font-display text-display-lg text-balance text-ivory">{cruise.title}</h2>
         </RevealOnScroll>
 
         <div className="mt-16 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">

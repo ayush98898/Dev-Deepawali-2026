@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ReactNode } from "react";
+import { trackConversion } from "@/lib/analytics";
 
 type Variant = "primary" | "secondary" | "ghost" | "whatsapp";
 
@@ -9,6 +12,8 @@ type Props = {
   variant?: Variant;
   className?: string;
   external?: boolean;
+  /** GA4/Google Ads event name to fire on click, e.g. "book_click". Omit for no tracking. */
+  trackEvent?: string;
 };
 
 const base =
@@ -21,19 +26,33 @@ const variants: Record<Variant, string> = {
   whatsapp: "bg-[#16281F] text-ivory border border-gold-dim/60 hover:border-gold-bright hover:text-gold-bright",
 };
 
-export default function Button({ href, children, variant = "primary", className = "", external = false }: Props) {
+export default function Button({
+  href,
+  children,
+  variant = "primary",
+  className = "",
+  external = false,
+  trackEvent,
+}: Props) {
   const classes = `${base} ${variants[variant]} ${className}`;
+  const onClick = trackEvent ? () => trackConversion(trackEvent) : undefined;
 
   if (external || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:")) {
     return (
-      <a href={href} className={classes} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>
+      <a
+        href={href}
+        className={classes}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+        onClick={onClick}
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={onClick}>
       {children}
     </Link>
   );

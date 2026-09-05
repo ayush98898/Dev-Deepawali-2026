@@ -29,11 +29,11 @@ export default function IntroStatement() {
 
       <div className="section-shell relative">
         <RevealOnScroll>
-          <p className="font-display text-display-md italic text-balance text-ivory">
+          <h2 className="font-display text-display-md italic text-balance text-ivory">
             Some cities are visited.
             <br />
             Kashi is experienced.
-          </p>
+          </h2>
         </RevealOnScroll>
 
         <RevealOnScroll delay={150} className="mt-10 max-w-prose">

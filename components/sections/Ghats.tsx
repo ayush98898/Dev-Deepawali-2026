@@ -48,7 +48,7 @@ export default function Ghats() {
         <div className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
           {ghats.map((ghat, i) => (
             <RevealOnScroll key={ghat.name} delay={i * 80}>
-              <p className="font-display text-lg text-gold-bright">{ghat.name}</p>
+              <h3 className="font-display text-lg text-gold-bright">{ghat.name}</h3>
               <p className="mt-1 text-sm text-ivory-dim">{ghat.note}</p>
             </RevealOnScroll>
           ))}

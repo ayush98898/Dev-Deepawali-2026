@@ -10,7 +10,7 @@ export default function Akashganga() {
       <div className="section-shell relative grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <RevealOnScroll className="flex flex-col gap-6">
           <span className="eyebrow">{akashganga.eyebrow}</span>
-          <p className="font-display text-display-md text-balance text-ivory">{akashganga.title}</p>
+          <h2 className="font-display text-display-md text-balance text-ivory">{akashganga.title}</h2>
           <p className="max-w-prose text-ivory-dim">
             Entry is by QR code, not by queue. What follows is curated for a small number of guests —
             an afternoon built around Ramnagar Fort's history, craft, and classical performance.
